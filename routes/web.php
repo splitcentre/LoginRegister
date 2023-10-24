@@ -22,3 +22,6 @@ Route::controller(LoginRegisterController::class)->group(function() {
     Route::get('/dashboard', 'dashboard')->name('dashboard');
     Route::post('/logout', 'logout')->name('logout');
    });
+   Route::get('/porto', function () {
+    return view('porto');
+});

@@ -18,6 +18,6 @@ class MailController extends Controller
         $data = $request->all();
 
         dispatch(new SendMailJob($data));
-        return redirect()->route('kirim-email')->with('success', 'Email berhasil dikirim');
+        return redirect()->route('send-email')->with('success', 'Email berhasil dikirim');
     }
 }

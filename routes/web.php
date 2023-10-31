@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginRegisterController;
+use App\Http\Controllers\MailController;
+use App\Http\Controllers\UserMailController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,3 +24,7 @@ Route::controller(LoginRegisterController::class)->group(function() {
     Route::get('/dashboard', 'dashboard')->name('dashboard');
     Route::post('/logout', 'logout')->name('logout');
    });
+
+Route::get('/users', [UserMailController::class, 'index'])->name('users');
+Route::get('/send-mail', [MailController::class, 'index'])->name('send-email');
+Route::post('/post-email', [MailController::class, 'store'])->name('post-email');
